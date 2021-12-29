@@ -158,3 +158,9 @@ li > deleteButton {
     width: 300px;
   }
 }
+
+@media all and (min-width: 900px) {
+  .container {
+    width: 500px;
+  }
+}
