@@ -152,3 +152,9 @@ li > deleteButton {
 .close-modal:hover {
   cursor: pointer;
 }
+
+@media all and (max-width: 500px) {
+  .container {
+    width: 300px;
+  }
+}
