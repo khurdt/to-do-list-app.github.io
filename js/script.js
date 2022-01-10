@@ -1,6 +1,6 @@
 $('#button').on('click', newItem);
 
-function newItem(event) {
+function newItem() {
 
   let list = $('#list'),
       input = $('input'),
@@ -37,7 +37,7 @@ function newItem(event) {
   })
 //#4 rearranging list function
   list.sortable();
-};
+}
 
 let showInstructions = $('#showInstructions')
 
@@ -52,12 +52,12 @@ showInstructions.on('click', function() {
   let modalTitle = $('<h2 class="modal-title">Instructions:</h2>');
 
   let paragraphs = $('<p>Click to underline an item.</p>' +
-                    '<p>Double click to mark an item off.</p>' +
-                    '<p>click X to delete an item.</p>' +
-                    '<p>drag items to reorder.</p>' +
-                    '<p>Enjoy.</p>');
+                      '<p>Double click to mark an item off.</p>' +
+                      '<p>click X to delete an item.</p>' +
+                      '<p>drag items to reorder.</p>' +
+                      '<p>Enjoy.</p>');
 
-  closeModal = $('<button onclick="hideModal()" class="close-modal">X</button>');
+  let closeModal = $('<button onclick="hideModal()" class="close-modal">X</button>');
 
   modalContainer.append(modal);
   modal.append(closeModal);
@@ -87,7 +87,7 @@ window.addEventListener('keydown', function(event) {
 function hideModal() {
   let modalContainer = $('#modal-container');
   modalContainer.removeClass('is-visible');
-};
+}
 
 $('#listForm').submit(function(event) {
   event.preventDefault();
