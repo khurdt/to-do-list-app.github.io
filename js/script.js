@@ -3,11 +3,12 @@ $('#button').on('click', newItem);
 function newItem() {
 
   let list = $('#list'),
-      input = $('input'),
-      inputValue = $('#input').val(),
-      li = $('<li class="list-item"></li>'),
-      emptyAlert = $('<div class="alert">Please write something</div>');
-      emptyAlert.fadeOut(2000);
+    input = $('input'),
+    inputValue = $('#input').val(),
+    li = $('<li class="list-item"></li>'),
+    emptyAlert = $('<div class="alert">Please write something</div>');
+
+  emptyAlert.fadeOut(2000);
 
   li.append(inputValue);
 
@@ -17,7 +18,7 @@ function newItem() {
     list.append(li);
     input.val('');
   }
-//#1 Crossing out an item
+  //#1 Crossing out an item
   li.on('click', function() {
     if (li.hasClass('list-item')) {
       li.addClass('underline').removeClass('list-item');
@@ -27,15 +28,15 @@ function newItem() {
       li.removeClass('strike').addClass('list-item');
     }
   });
-//#2 adding delete button
+  //#2 adding delete button
   let deleteButton = $('<deleteButton></deleteButton>');
   deleteButton.append(document.createTextNode('X'));
   li.append(deleteButton);
-//#3 adding display: none to delete button
+  //#3 adding display: none to delete button
   deleteButton.on('click', function() {
     li.addClass('delete');
   })
-//#4 rearranging list function
+  //#4 rearranging list function
   list.sortable();
 }
 
@@ -72,7 +73,7 @@ showInstructions.on('click', function() {
   })
   //hide modal if click on X button
   closeModal.on('click', function() {
-      hideModal();
+    hideModal();
   })
 
 });
@@ -92,25 +93,3 @@ function hideModal() {
 $('#listForm').submit(function(event) {
   event.preventDefault();
 })
-
-
-
-  // $.ajax('https://yesno.wtf/api', {
-  //   method: 'GET',
-  //   dataType: 'json',
-  //   timeout: 5000
-  // }).then(function (responseJson) {
-  //   console.log(responseJson);
-  // }).catch(function(err) {
-  //   console.log('Caught an error' + err.statusText);
-  // });
-
-
-  // input.each(function (i) {
-  //   let inputValue = $(this).val();
-  //   let inputName = $(this).attr('name');
-  //   if (inputValue.length < 1) {
-  //     console.log('Please fill out the' + inputName + 'field')
-  //   }
-  // })
-  // });
