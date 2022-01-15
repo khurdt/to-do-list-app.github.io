@@ -1,4 +1,4 @@
-# to-do-list.app.github.io
+# Simple to do list application
 ● allow user to read instructions on a modal
 <br /><br />
 ● allow user to submit list items in input
