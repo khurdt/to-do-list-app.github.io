@@ -78,10 +78,6 @@ ol li:nth-child(even) {
   display: none;
 }
 
-#showInstructions {}
-
-#list {}
-
 .list-title {
   text-align: center;
   padding: 20px

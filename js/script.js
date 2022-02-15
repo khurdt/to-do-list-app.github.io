@@ -14,17 +14,17 @@ function newItem() {
 
   if (!inputValue) {
     list.append(emptyAlert);
-  }else {
+  } else {
     list.append(li);
     input.val('');
   }
   //#1 Crossing out an item
-  li.on('click', function() {
+  li.on('click', function () {
     if (li.hasClass('list-item')) {
       li.addClass('underline').removeClass('list-item');
-    }else if (li.hasClass('underline')) {
+    } else if (li.hasClass('underline')) {
       li.removeClass('underline').addClass('strike');
-    }else if (li.hasClass('strike')) {
+    } else if (li.hasClass('strike')) {
       li.removeClass('strike').addClass('list-item');
     }
   });
@@ -33,7 +33,7 @@ function newItem() {
   deleteButton.append(document.createTextNode('X'));
   li.append(deleteButton);
   //#3 adding display: none to delete button
-  deleteButton.on('click', function() {
+  deleteButton.on('click', function () {
     li.addClass('delete');
   })
   //#4 rearranging list function
@@ -42,7 +42,7 @@ function newItem() {
 
 let showInstructions = $('#showInstructions')
 
-showInstructions.on('click', function() {
+showInstructions.on('click', function () {
 
   let modalContainer = $('#modal-container');
   //initialize modal
@@ -53,10 +53,10 @@ showInstructions.on('click', function() {
   let modalTitle = $('<h2 class="modal-title">Instructions:</h2>');
 
   let paragraphs = $('<p>Click to underline an item.</p>' +
-                      '<p>Double click to mark an item off.</p>' +
-                      '<p>click X to delete an item.</p>' +
-                      '<p>drag items to reorder.</p>' +
-                      '<p>Enjoy.</p>');
+    '<p>Double click to mark an item off.</p>' +
+    '<p>click X to delete an item.</p>' +
+    '<p>drag items to reorder.</p>' +
+    '<p>Enjoy.</p>');
 
   let closeModal = $('<button onclick="hideModal()" class="close-modal">X</button>');
 
@@ -65,20 +65,20 @@ showInstructions.on('click', function() {
   modal.append(modalTitle);
   modal.append(paragraphs);
 
-  modalContainer.on('click', function(event) {
+  modalContainer.on('click', function (event) {
     let target = event.target;
     if (target === modalContainer) {
       hideModal();
     }
   })
   //hide modal if click on X button
-  closeModal.on('click', function() {
+  closeModal.on('click', function () {
     hideModal();
   })
 
 });
 
-window.addEventListener('keydown', function(event) {
+window.addEventListener('keydown', function (event) {
   let modalContainer = $('#modal-container');
   if (event.key === 'Escape' && modalContainer.hasClass('is-visible')) {
     hideModal();
@@ -90,6 +90,6 @@ function hideModal() {
   modalContainer.removeClass('is-visible');
 }
 
-$('#listForm').submit(function(event) {
+$('#listForm').submit(function (event) {
   event.preventDefault();
 })
